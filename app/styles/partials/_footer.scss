@@ -2,6 +2,14 @@
  * Mobile first ...
  */
 
+footer {
+    border-top: 1px solid $purple;
+    color: $gray;
+    font-size: .9em;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
 /** Larger Screens - desktops and tablets **/
 @media all and (min-width: 990px) {
 

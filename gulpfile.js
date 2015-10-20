@@ -88,7 +88,7 @@ gulp.task('styles', function () {
         'app/styles/components/components.scss'
     ])
         .pipe($.sourcemaps.init())
-        .pipe($.changed('.tmp/styles', {extension: '.css'}))
+        //.pipe($.changed('.tmp/styles', {extension: '.css'}))
         .pipe($.sass({
             precision: 10,
             onError: console.error.bind(console, 'Sass error:')
@@ -115,8 +115,7 @@ gulp.task('html', function () {
         //       the next line to only include styles your project uses.
         .pipe($.if('*.css', $.uncss({
             html: [
-                'app/index.html',
-                'app/styleguide.html'
+                'app/index.html'
             ],
             // CSS Selectors for UnCSS to ignore
             ignore: [

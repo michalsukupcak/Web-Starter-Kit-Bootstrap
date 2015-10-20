@@ -1,4 +1,4 @@
-@import '_h5bp';
+@import 'partials/_variables';
 
 html,
 body {
@@ -17,7 +17,11 @@ body {
     min-height: 100%;
 }
 
-@import 'partials/_variables';
+a {
+    color: $purple;
+}
+
 @import 'partials/_header';
+@import 'partials/_navigation';
 @import 'partials/_main';
 @import 'partials/_footer';
