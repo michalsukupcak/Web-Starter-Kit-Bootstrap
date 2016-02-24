@@ -21,7 +21,7 @@ Check out README.MD for WSK for detailed explanation of what is going on here. Y
 
 Simply download new version of jQuery, Bootstrap and Font-Awesome using ```bower install```. This creates ```/bower_components``` folder with latest versions of all 3 libraries/frameworks. Then simply replace following files:
 
-| Original file location                    | New file location                                                                              | Comment                                       |
+| Original file                             | New file                                                                                       | Comment                                       |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------- |
 | ```/app/fonts/**```                       | ```/bower_components/bootstrap/dist/fonts/**```, ```/bower_components/font-awesome/fonts/**``` | Delete all font files and copy new font files |
 | ```/app/scripts/bootstrap.min.js```       | ```/bower_components/bootstrap/dist/js/bootstrap.min.js```                                     | Replace original file with new file            |
