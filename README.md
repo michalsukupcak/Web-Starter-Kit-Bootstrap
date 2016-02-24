@@ -17,7 +17,7 @@ Check out README.MD for WSK for detailed explanation of what is going on here. Y
 - ```gulp serve``` - run a local web server (localhost:3000) with a live and automatically updated preview of your application
 - ```gulp``` - create production-ready build (dist)
 
-**Update jQuery/Bootstrap/Font-Awesome**
+## Update jQuery/Bootstrap/Font-Awesome ##
 
 Simply download new version of jQuery, Bootstrap and Font-Awesome using ```bower install```. This creates ```/bower_components``` folder with latest versions of all 3 libraries/frameworks. Then simply replace following files:
 
