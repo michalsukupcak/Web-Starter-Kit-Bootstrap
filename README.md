@@ -15,4 +15,4 @@ Check out README.MD for WSK for detailed explanation of what is going on here.
 - Clone the repository.
 - run ```npm install``` (might require sudo)
 - run ```bower install```
-- Perfect, you're ready. Now run ```gulp server``` to start devmode (with a custom minified server) or ```gulp``` to create production-ready build.
+- Perfect, you're ready. Now run ```gulp serve``` to start devmode (with a custom minified server) or ```gulp``` to create production-ready build.
