@@ -29,7 +29,7 @@ import gulp from 'gulp';
 import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
-import swPrecache from 'sw-precache';
+//import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import pkg from './package.json';
@@ -54,6 +54,13 @@ gulp.task('images', () =>
     })))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size({title: 'images'}))
+);
+
+// Copy fonts
+gulp.task('fonts', () =>
+  gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
+    .pipe($.size({title: 'fonts'}))
 );
 
 // Copy all files at the root level (app)
@@ -109,6 +116,8 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
+      './app/scripts/jquery.min.js',
+      './app/scripts/bootstrap.min.js',
       './app/scripts/main.js'
       // Other scripts
     ])
@@ -204,8 +213,8 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
-    'generate-service-worker',
+    ['lint', 'html', 'scripts', 'images', 'fonts', 'copy'],
+    //'generate-service-worker',
     cb
   )
 );
@@ -222,39 +231,39 @@ gulp.task('pagespeed', cb =>
 );
 
 // Copy over the scripts that are used in importScripts as part of the generate-service-worker task.
-gulp.task('copy-sw-scripts', () => {
-  return gulp.src(['node_modules/sw-toolbox/sw-toolbox.js', 'app/scripts/sw/runtime-caching.js'])
-    .pipe(gulp.dest('dist/scripts/sw'));
-});
+//gulp.task('copy-sw-scripts', () => {
+//  return gulp.src(['node_modules/sw-toolbox/sw-toolbox.js', 'app/scripts/sw/runtime-caching.js'])
+//    .pipe(gulp.dest('dist/scripts/sw'));
+//});
 
 // See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for
 // an in-depth explanation of what service workers are and why you should care.
 // Generate a service worker file that will provide offline functionality for
 // local resources. This should only be done for the 'dist' directory, to allow
 // live reload to work as expected when serving from the 'app' directory.
-gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
-  const rootDir = 'dist';
-  const filepath = path.join(rootDir, 'service-worker.js');
-
-  return swPrecache.write(filepath, {
-    // Used to avoid cache conflicts when serving on localhost.
-    cacheId: pkg.name || 'web-starter-kit',
-    // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
-    importScripts: [
-      'scripts/sw/sw-toolbox.js',
-      'scripts/sw/runtime-caching.js'
-    ],
-    staticFileGlobs: [
-      // Add/remove glob patterns to match your directory setup.
-      `${rootDir}/images/**/*`,
-      `${rootDir}/scripts/**/*.js`,
-      `${rootDir}/styles/**/*.css`,
-      `${rootDir}/*.{html,json}`
-    ],
-    // Translates a static file path to the relative URL that it's served from.
-    stripPrefix: path.join(rootDir, path.sep)
-  });
-});
+//gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
+//  const rootDir = 'dist';
+//  const filepath = path.join(rootDir, 'service-worker.js');
+//
+//  return swPrecache.write(filepath, {
+//    // Used to avoid cache conflicts when serving on localhost.
+//    cacheId: pkg.name || 'web-starter-kit',
+//    // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
+//    importScripts: [
+//      'scripts/sw/sw-toolbox.js',
+//      'scripts/sw/runtime-caching.js'
+//    ],
+//    staticFileGlobs: [
+//      // Add/remove glob patterns to match your directory setup.
+//      `${rootDir}/images/**/*`,
+//      `${rootDir}/scripts/**/*.js`,
+//      `${rootDir}/styles/**/*.css`,
+//      `${rootDir}/*.{html,json}`
+//    ],
+//    // Translates a static file path to the relative URL that it's served from.
+//    stripPrefix: path.join(rootDir, path.sep)
+//  });
+//});
 
 // Load custom tasks from the `tasks` directory
 // Run: `npm install --save-dev require-dir` from the command-line
