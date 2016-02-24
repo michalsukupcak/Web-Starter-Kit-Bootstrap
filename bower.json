@@ -1,10 +1,14 @@
 {
-  "name": "web-starter-kit-0.5.4",
-  "version": "0.0.0",
+  "name": "Web-Starter-Kit-Bootstrap-0.6",
+  "description": "",
+  "main": "",
   "authors": [
-    "Michal Sukupcak <michal.sukupcak@gmail.com>"
+    "Michal Sukupcak <bloodspellsvk@gmail.com>"
   ],
   "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -13,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass": "~3.3.5"
+    "jquery": "~2.2.1",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0"
   }
 }

@@ -1,5 +1,6 @@
-bower_components
+app/bower_components
 node_modules
-dist
+dist/
 .idea
 .tmp
+app.yaml

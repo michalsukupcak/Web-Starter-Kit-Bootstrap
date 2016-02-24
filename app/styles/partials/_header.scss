@@ -1,19 +1,6 @@
-/*
- * Mobile first ...
- */
-
+/* Header */
 header {
-    color: white;
-    background: $purple;
-    font-size: 2em;
-    padding: 20px 0;
-}
-
-/** Larger Screens - desktops and tablets **/
-@media all and (min-width: 990px) {
-
-    /*
-     * ... desktop later.
-     */
-
+  background: $dark-gray;
+  color: $soft-gray;
+  padding: 10px;
 }

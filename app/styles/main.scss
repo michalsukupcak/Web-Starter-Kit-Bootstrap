@@ -1,26 +1,13 @@
-@import 'partials/_variables';
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+/*
+ * Main SASS file - used to style <body> element and imports other partials from /partials folder.
+ */
 
 body {
-    position: relative;
-    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    background-color: #fff;
-    box-sizing: border-box;
-    min-height: 100%;
+
 }
 
-a {
-    color: $purple;
-}
-
+@import '_variables';
+@import '_mixins';
 @import 'partials/_header';
 @import 'partials/_navigation';
 @import 'partials/_main';

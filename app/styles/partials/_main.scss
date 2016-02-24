@@ -1,16 +1,20 @@
-/*
- * Mobile first ...
- */
-
+/* Main */
 main {
-    padding: 20px;
+  padding: 0 0 40px 0;
 }
 
-/** Larger Screens - desktops and tablets **/
-@media all and (min-width: 990px) {
+/* H2 title in 3 rows inside <main> element */
+main h2 {
+  text-align: center;
+}
 
-    /*
-     * ... desktop later.
-     */
+/* Image in the 3 rows inside <main> element */
+main img {
+  margin: 0 0 10px 0;
+  max-width: 100%;
+}
 
+/* Text block in the 3 rows inside <main> element */
+main p {
+  text-align: justify;
 }

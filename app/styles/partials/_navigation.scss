@@ -1,15 +1,23 @@
-/*
- * Mobile first ...
- */
+/* Navigation */
 nav {
-    margin: 20px 0 0 0;
+  padding: 20px 0;
+  text-align: center;
 }
 
-/** Larger Screens - desktops and tablets **/
-@media all and (min-width: 990px) {
-
-    /*
-     * ... desktop later.
-     */
-
+/* Navigation link + its focus and hover states */
+nav a {
+  border-bottom: 1px solid;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.2em;
+  margin: 10px;
+  padding: 7px 10px 5px 10px;
+  text-decoration: none;
+  transition: .2s ease;
+}
+nav a:focus {
+  text-decoration: none;
+}
+nav a:hover {
+  background: $soft-gray;
+  text-decoration: none;
 }
