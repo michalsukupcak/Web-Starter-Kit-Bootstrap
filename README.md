@@ -1,7 +1,6 @@
 ## PLEASE NOTE
 > AS OF 29.7.2017 THIS REPOSITORY IS NO LONGER MAINTAINED
 
-
 ![Web Starter Kit + Bootstrap](http://s30.postimg.org/7u2nj3c81/web_starter_kit_bootstrap.png)
 
 ## Overview
